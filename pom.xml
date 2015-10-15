@@ -6,9 +6,9 @@
 	<artifactId>HappyHour</artifactId>
 	<name>HappyHour</name>
 	<packaging>war</packaging>
-	<version>1.0.0-BUILD-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<properties>
-		<java-version>1.6</java-version>
+		<java-version>1.7</java-version>
 		<org.springframework-version>4.1.4.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.7.4</org.aspectj-version>
 		<org.slf4j-version>1.7.5</org.slf4j-version>
@@ -47,11 +47,11 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 		
-		<!--<dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${org.springframework-version}</version>
-		</dependency>-->
+		</dependency>
 		
 	
 

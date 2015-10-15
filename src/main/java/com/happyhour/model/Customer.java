@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class Customer {
 
-	private int id;
+	private long id;
 	private String userId;
 	private String userName;
 	private String address;
@@ -20,11 +20,11 @@ public class Customer {
 	private Date createdDate;
 	private Date updatedDate;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -98,6 +98,61 @@ public class Customer {
 
 	public void setUpdatedDate(Date updatedDate) {
 		this.updatedDate = updatedDate;
+	}
+	
+
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", userId=" + userId + ", userName="
+				+ userName + ", address=" + address + ", password=" + password
+				+ ", pincode=" + pincode + ", phoneNum=" + phoneNum
+				+ ", email=" + email + ", createdDate=" + createdDate
+				+ ", updatedDate=" + updatedDate + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		result = prime * result
+				+ ((password == null) ? 0 : password.hashCode());
+		result = prime * result + phoneNum;
+		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
+		result = prime * result
+				+ ((userName == null) ? 0 : userName.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		if (id != other.id)
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (phoneNum != other.phoneNum)
+			return false;
+		if (userId == null) {
+			if (other.userId != null)
+				return false;
+		} else if (!userId.equals(other.userId))
+			return false;
+		if (userName == null) {
+			if (other.userName != null)
+				return false;
+		} else if (!userName.equals(other.userName))
+			return false;
+		return true;
 	}
 
 }

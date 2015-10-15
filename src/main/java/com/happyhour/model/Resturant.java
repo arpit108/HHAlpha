@@ -109,4 +109,47 @@ public class Resturant {
 		this.updatedDate = updatedDate;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		result = prime * result
+				+ ((restLoginId == null) ? 0 : restLoginId.hashCode());
+		result = prime * result + restPhoneNum;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Resturant other = (Resturant) obj;
+		if (id != other.id)
+			return false;
+		if (restLoginId == null) {
+			if (other.restLoginId != null)
+				return false;
+		} else if (!restLoginId.equals(other.restLoginId))
+			return false;
+		if (restPhoneNum != other.restPhoneNum)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Resturant [id=" + id + ", restName=" + restName
+				+ ", restAddress=" + restAddress + ", restPincode="
+				+ restPincode + ", restPhoneNum=" + restPhoneNum
+				+ ", restEmail=" + restEmail + ", restLoginId=" + restLoginId
+				+ ", restPassword=" + restPassword + ", restTypeId="
+				+ restTypeId + ", createdDate=" + createdDate
+				+ ", updatedDate=" + updatedDate + "]";
+	}
+
 }
