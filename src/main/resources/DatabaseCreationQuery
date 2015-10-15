@@ -1,7 +1,7 @@
 CREATE DATABASE happyhour;
 
 CREATE TABLE Customer
-( id INT(11) NOT NULL AUTO_INCREMENT,
+( id SIGNED BIGINT NOT NULL AUTO_INCREMENT,
   user_id VARCHAR(100) NOT NULL,
   user_name VARCHAR(100) NOT NULL,
   address VARCHAR(500),
@@ -17,8 +17,8 @@ CREATE TABLE Customer
 
 
 CREATE TABLE Merchant
-( id INT(11) NOT NULL AUTO_INCREMENT,
-  merchant_id VARCHAR(100) NOT NULL,
+( id SIGNED BIGINT NOT NULL AUTO_INCREMENT,
+  merchant_id SIGNED BIGINT NOT NULL,
   merchant_name VARCHAR(100) NOT NULL,
   password VARCHAR(100) NOT NULL,
   phone_num INT(20) NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE Merchant
 
 
 CREATE TABLE Resturant
-( id INT(11) NOT NULL AUTO_INCREMENT,
+( id SIGNED BIGINT NOT NULL AUTO_INCREMENT,
   rest_name VARCHAR(100) NOT NULL,
   rest_address VARCHAR(500) NOT NULL,
   rest_pincode INT(6) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE Resturant
   rest_email VARCHAR(100) NOT NULL,
   rest_login_id VARCHAR(100) NOT NULL,
   rest_password VARCHAR(100) NOT NULL,
-  rest_type_id INT(6) NOT NULL,
+  rest_type_id SIGNED BIGINT NOT NULL,
   created_date DATETIME DEFAULT NULL,
   updated_date DATETIME DEFAULT NULL,
   CONSTRAINT contacts_pk PRIMARY KEY (id),
@@ -49,30 +49,30 @@ CREATE TABLE Resturant
 
 
 CREATE TABLE Merchant_Rest
-(merchant_id INT(11) NOT NULL,
-rest_id INT(11) NOT NULL
+(merchant_id SIGNED BIGINT NOT NULL,
+rest_id SIGNED BIGINT NOT NULL
 );
 
 CREATE TABLE Rest_Offer
-( id INT(11) NOT NULL AUTO_INCREMENT,
-  merchant_id INT(11) NOT NULL,
-  rest_id INT(11) NOT NULL,
-  date DATETIME DEFAULT NULL,
+( id SIGNED BIGINT NOT NULL AUTO_INCREMENT,
+  merchant_id SIGNED BIGINT NOT NULL,
+  rest_id SIGNED BIGINT NOT NULL,
+  creation_date DATETIME DEFAULT NULL,
   Starttime double not null,
   endtime double not null,
   discount double DEFAULT null,
-  offer_id INT(15) NOT NULL,
-  offer_count INT(11) NOT NULL,
+  offer_id SIGNED BIGINT NOT NULL,
+  offer_count SIGNED BIGINT NOT NULL,
   CONSTRAINT contacts_pk PRIMARY KEY (id)
 );
 
 
 CREATE TABLE Order_Table
-( id INT(11) NOT NULL AUTO_INCREMENT,
-  order_id  INT(11) NOT NULL,
-  rest_id INT(11) NOT NULL,
-  cust_id INT(11) NOT NULL,
-  offer_id INT(11) NOT NULL,
+( id SIGNED BIGINT NOT NULL AUTO_INCREMENT,
+  order_id  SIGNED BIGINT NOT NULL,
+  rest_id SIGNED BIGINT NOT NULL,
+  cust_id SIGNED BIGINT NOT NULL,
+  offer_id SIGNED BIGINT NOT NULL,
   location VARCHAR(100) NOT NULL,
   discount_taken double not null,
   CONSTRAINT contacts_pk PRIMARY KEY (id),
@@ -80,7 +80,7 @@ CREATE TABLE Order_Table
 );
 
 CREATE TABLE Rest_Cat
-( id INT(11) NOT NULL AUTO_INCREMENT,
-  type VARCHAR(100) NOT NULL,
+( id SIGNED BIGINT NOT NULL AUTO_INCREMENT,
+  category VARCHAR(100) NOT NULL,
   CONSTRAINT contacts_pk PRIMARY KEY (id)
 );
