@@ -1,3 +1,5 @@
+/*Use Mysql Database*/
+
 CREATE DATABASE happyhour;
 
 CREATE TABLE Customer
