@@ -1,5 +1,10 @@
 package com.happyhour.model;
 
+/**
+ * Model for Restaurant Category
+ * @author arpit.bhargava
+ *
+ */
 public class RestCategory {
 
 	private long id;
